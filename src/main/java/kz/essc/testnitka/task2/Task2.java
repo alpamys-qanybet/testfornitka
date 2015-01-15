@@ -80,10 +80,14 @@ public class Task2 {
             else
                 break;
 
-        for (int i = index; i < index + counter && counter >= 3; i++)
-            list.remove(index);
-        
-        removeWithSequence(index+1);
+        if (counter >= 3) {
+        	for (int i = index; i < index + counter; i++)
+        		list.remove(index);
+            
+        	removeWithSequence(index);
+        }
+        else
+        	removeWithSequence(index+1);
     }
 
     public void removeWithoutSequence(int index) {
